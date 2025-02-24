@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos.css" />
+    <script
+      src="https://kit.fontawesome.com/853b222c5b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="newTask" placeholder="Task to be done..." />
+      <button id="addTask">Add</button>
+
+      <ul class="options">
+        <div class="filter-options">
+          <li>All |</li>
+          <li>Pending |</li>
+          <li>Completed</li>
+        </div>
+        <button id="clearAll">Clear All</button>
+      </ul>
+
+      <hr />
+
+      <ol id="taskList">
+        <!-- Tarefas serão armazenadas aqui com local storage -->
+
+        <div class="menu"></div>
+      </ol>
+    </div>
+  </body>
+</html>
