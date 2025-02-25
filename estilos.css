@@ -20,15 +20,29 @@ body {
   top: 50%;
   translate: -50% -50%;
   width: 350px;
-  min-height: 500px;
+  min-height: 400px;
   padding: 20px;
   border-radius: 10px;
   background-color: white;
   color: rgb(70, 70, 70);
 }
 
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+img {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  width: 70px;
+  height: 60px;
+}
+
 ul {
-  margin: 10px 2px;
+  margin: 10px 5px;
   padding: 0;
   font-size: 0.9rem;
   list-style: none;
@@ -86,14 +100,21 @@ ol {
 
 ol li {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 7px;
   padding: 10px;
-  background-color: rgba(179, 204, 196, 0.521);
+  background-color: rgba(212, 212, 212, 0.21);
   border: 1px solid gray;
   border-radius: 5px;
 }
 
 i {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin: 0 30px;
+}
+
+.menu span {
+  padding: 0 10px;
   cursor: pointer;
 }

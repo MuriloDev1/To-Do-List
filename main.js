@@ -20,21 +20,42 @@ addTask.addEventListener("click", () => {
     // Adiciona opções de editar e excluir menu
     const editOption = document.createElement("i");
     editOption.classList.add("fa-solid", "fa-pen-to-square");
+    editOption.style.color="green"
     menu.appendChild(editOption);
 
     const deleteOption = document.createElement("span");
-    deleteOption.classList.add("fa-solid", "fa-trash");
+    deleteOption.classList.add("fa-solid", "fa-trash" );
+    deleteOption.style.color="red"
     menu.appendChild(deleteOption);
 
     itemTask.textContent = newTask;
 
     taskList.appendChild(itemTask);
     itemTask.appendChild(ellipsisIcon);
-    taskList.appendChild(menu);
+    itemTask.appendChild(menu);
 
     ellipsisIcon.addEventListener("click", () => {
       menu.style.visibility = "visible";
+      menu.style.position = "absolute";
+      menu.style.right = "0";
+      menu.style.margin = "0 25px";
+      ellipsisIcon.style.visibility = "hidden";
     });
+
+    // Ao clicar fora, volta para o ícone de elipsis
+    document.addEventListener("click", (event) => {
+      if (!menu.contains(event.target) && event.target !== ellipsisIcon) {
+        menu.style.visibility = "hidden"; // Esconde o menu
+        ellipsisIcon.style.visibility = "visible"; // Mostra o ícone de elipsis novamente
+      }
+    });
+
+    deleteOption.addEventListener("click", () => {
+      itemTask.remove();
+      menu.remove();
+    });
+
+    editOption.addEventListener("click", () => {});
 
     // Limpa o campo de entrada após adicionar
     inputTask.value = "";
